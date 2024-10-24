@@ -28,13 +28,13 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 
-# 设置字体
-font = pygame.font.Font(resource_path("assets/font.ttf"), 20)
+# 设置字体（使用系统默认字体）
+font = pygame.font.SysFont(None, 20)
 
 # 创建"代码雨"效果
 class CodeRain:
     def __init__(self):
-        self.font = pygame.font.Font(resource_path("assets/font.ttf"), 20)
+        self.font = pygame.font.SysFont(None, 20)
         self.characters = "01"
         self.drops = []
         self.initialize_drops()
@@ -83,7 +83,7 @@ def generate_wallpaper():
         code_rain.draw(screen)
 
         # 添加生日祝福文字
-        birthday_font = pygame.font.Font(resource_path("assets/font.ttf"), 72)
+        birthday_font = pygame.font.SysFont(None, 72)
         birthday_text = birthday_font.render("Happy Birthday, 曹羽!", True, GREEN)
         text_rect = birthday_text.get_rect(center=(SCREEN_WIDTH/2, SCREEN_HEIGHT/2))
         screen.blit(birthday_text, text_rect)

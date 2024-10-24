@@ -4,9 +4,14 @@ import random
 
 def type_effect(text, delay=0.05):
     for char in text:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(delay)
+        try:
+            sys.stdout.write(char)
+            sys.stdout.flush()
+            time.sleep(delay)
+        except:
+            # 如果写入失败，直接打印整行文本
+            print(text)
+            return
     print()
 
 def display_ascii_art():

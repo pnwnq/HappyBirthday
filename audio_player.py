@@ -35,19 +35,11 @@ class AudioPlayer:
         if self.background_music:
             self.background_music.set_volume(self.volume)
 
-    def play_sound_effect(self, file_path):
-        sound = pygame.mixer.Sound(file_path)
-        sound.set_volume(self.volume)
-        sound.play()
-
 audio_player = AudioPlayer()
 
 def initialize_audio():
     audio_player.load_background_music(resource_path("assets/background_music.mp3"))
     audio_player.play_background_music()
-
-def play_birthday_sound():
-    audio_player.play_sound_effect(resource_path("assets/birthday_sound.mp3"))
 
 def set_volume(volume):
     audio_player.set_volume(volume)
